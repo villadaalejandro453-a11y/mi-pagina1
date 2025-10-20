@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menú | La Mesa del Rey</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 🔝 Encabezado -->
+  <header>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo La Mesa del Rey" class="logo-img" />
+      <h1 class="titulo-logo">La Mesa del Rey</h1>
+    </div>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Historia</a>
+      <a href="menu.html" class="activo">Menú</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="ubicacion.html">Ubicación</a>
+    </nav>
+  </header>
+
+  
+
+  <!-- 🥟 Sección principal -->
+  <section class="menu-seccion">
+    <h1>Nuestro Menú de Empanadas</h1>
+    <p class="subtitulo">Hechas a mano con ingredientes frescos, sabor auténtico y el toque dorado del Rey 👑</p>
+
+    <div class="menu-grid">
+      <!-- Empanada Tradicional -->
+      <div class="card">
+        <img src="empanadas-colombianas-imagen-destacada.jpg" alt="Empanada de Carne" />
+        <h3>Empanada Tradicional de Carne</h3>
+        <p>Rellena de carne sazonada al estilo casero con masa crujiente.</p>
+        <span class="precio">$2.000</span>
+        <button onclick="agregarCarrito('Empanada Tradicional de Carne', 2000)">Agregar al carrito</button>
+      </div>
+
+      <!-- Empanada de Pollo -->
+      <div class="card">
+        <img src="pollo.jpg" alt="Empanada de Pollo" />
+        <h3>Empanada de Pollo</h3>
+        <p>Jugosa pechuga desmenuzada, especias suaves y toque artesanal.</p>
+        <span class="precio">$2.500</span>
+        <button onclick="agregarCarrito('Empanada de Pollo', 2500)">Agregar al carrito</button>
+      </div>
+
+      <!-- Empanada Mixta -->
+      <div class="card">
+        <img src="img/pollo.jpg" alt="Empanada Mixta" />
+        <h3>Empanada Mixta</h3>
+        <p>Combinación perfecta de carne y pollo en una masa dorada.</p>
+        <span class="precio">$3.000</span>
+        <button onclick="agregarCarrito('Empanada Mixta', 3000)">Agregar al carrito</button>
+      </div>
+
+      <!-- Empanada de Queso -->
+      <div class="card">
+        <img src="img/queso.jpg" alt="Empanada de Queso" />
+        <h3>Empanada de Queso</h3>
+        <p>Queso fundido y masa fina: una delicia irresistible.</p>
+        <span class="precio">$2.000</span>
+        <button onclick="agregarCarrito('Empanada de Queso', 2000)">Agregar al carrito</button>
+      </div>
+
+      <!-- Empanada de Papa -->
+      <div class="card">
+        <img src="img/empanadas-venezolanas.webp" alt="Empanada de Papa" />
+        <h3>Empanada de Papa</h3>
+        <p>Suave relleno de papa criolla y especias tradicionales.</p>
+        <span class="precio">$2.000</span>
+        <button onclick="agregarCarrito('Empanada de Papa', 2000)">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🛒 Botón flotante del carrito -->
+  <button class="btn-carrito" onclick="mostrarCarrito()">🛒</button>
+
+  <!-- 🛍️ Modal del carrito -->
+  <div id="modal-carrito" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+      <h3>🛍️ Tu carrito</h3>
+      <ul id="lista-carrito"></ul>
+      <p id="total-carrito">Total: $0</p>
+      <div class="acciones">
+        <button onclick="vaciarCarrito()">Vaciar carrito</button>
+        <button onclick="cerrarCarrito()">Seguir comprando</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔻 Pie de página -->
+  <footer>
+      <p>© 2025 La Mesa del Rey — Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+</body>
+</html>

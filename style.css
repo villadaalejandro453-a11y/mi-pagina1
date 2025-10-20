@@ -1,0 +1,730 @@
+/* ==========================================================
+   🌟 LA MESA DEL REY - ESTILO GENERAL
+   ========================================================== */
+
+/* === FUENTES Y BASE === */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #0f0000;
+  color: #f8f8f8;
+  overflow-x: hidden;
+}
+
+/* ==========================================================
+   🔝 ENCABEZADO PRINCIPAL
+   ========================================================== */
+header {
+  background: linear-gradient(90deg, #2b0000, #1a0000);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  border-bottom: 3px solid #ffcc00;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* === LOGO === */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(255, 204, 0, 0.9);
+}
+
+.titulo-logo {
+  color: #ffcc00;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+}
+
+/* === NAVEGACIÓN === */
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.activo {
+  color: #ffcc00;
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 3px;
+}
+
+/* === RESPONSIVO HEADER === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .logo-container {
+    flex-direction: column;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+/* ==========================================================
+   🔍 BARRA DE BÚSQUEDA
+   ========================================================== */
+.busqueda-container {
+  position: relative;
+  margin: 40px auto;
+  text-align: center;
+  width: 90%;
+  max-width: 550px;
+}
+
+.busqueda-container input {
+  width: 100%;
+  padding: 14px 45px 14px 20px;
+  font-size: 16px;
+  border: 2px solid #ffcc00;
+  border-radius: 50px;
+  background-color: #1a0000;
+  color: #fff;
+  outline: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+}
+
+.busqueda-container input::placeholder {
+  color: #ffdd77;
+}
+
+.busqueda-container input:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+}
+
+#btn-limpiar {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  color: #ffcc00;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#btn-limpiar:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+/* ==========================================================
+   🏰 SECCIÓN HISTORIA
+   ========================================================== */
+.hero-historia {
+  background: url("img/historia-banner.jpg") center/cover no-repeat;
+  height: 300px;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffd700;
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+.overlay h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 1.2em;
+  color: #f5e8c7;
+}
+
+.texto-historia {
+  width: 80%;
+  margin: 50px auto;
+  line-height: 1.7;
+  text-align: justify;
+  animation: aparecer 1.3s ease;
+}
+
+.resaltado {
+  background: linear-gradient(90deg, #ffd700, #ffb300);
+  color: #1b0e05;
+  padding: 2px 6px;
+  border-radius: 4px;
+  animation: resplandor 1s infinite alternate;
+}
+
+/* ==========================================================
+   🍽️ MENÚ DE EMPANADAS
+   ========================================================== */
+.menu-seccion {
+  text-align: center;
+  background: radial-gradient(circle at top left, #330000, #0b0000);
+  padding: 70px 50px;
+}
+
+.menu-seccion h1 {
+  color: #ffcc00;
+  font-size: 38px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  justify-items: center;
+  margin-top: 40px;
+}
+
+.card {
+  background-color: #1a0000;
+  border: 2px solid #ffcc00;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.6);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-top: 15px;
+  color: #ffcc00;
+}
+
+.card .precio {
+  display: block;
+  font-weight: bold;
+  color: #ff9900;
+  margin-bottom: 10px;
+}
+
+.card button {
+  background-color: #ffcc00;
+  color: #2b0000;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.card button:hover {
+  background-color: #ff9900;
+  transform: scale(1.05);
+}
+
+/* ==========================================================
+   📍 SECCIÓN UBICACIÓN
+   ========================================================== */
+.seccion-ubicacion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 60px 80px;
+  gap: 50px;
+  align-items: center;
+  background: radial-gradient(circle at top left, #330000, #0f0000);
+}
+
+.ubicacion-texto h2 {
+  color: #ffcc00;
+  font-size: 32px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.ubicacion-mapa iframe {
+  width: 100%;
+  height: 450px;
+  border: 3px solid #ffcc00;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ubicacion-mapa iframe:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.6);
+}
+
+/* ==========================================================
+   💌 SECCIÓN CONTACTO
+   ========================================================== */
+.seccion-contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding: 70px 80px;
+  background: radial-gradient(circle at top left, #330000, #0f0000);
+  align-items: center;
+}
+
+.formulario-container {
+  background-color: #1a0000;
+  padding: 40px;
+  border-radius: 15px;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.3);
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2b0000;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  border: 1px solid #ffcc00;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+}
+
+.formulario button {
+  width: 100%;
+  background-color: #ffcc00;
+  color: #2b0000;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.formulario button:hover {
+  background-color: #ff9900;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   🛒 BOTÓN Y MODAL DEL CARRITO
+   ========================================================== */
+.btn-carrito {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #ffcc00;
+  border: none;
+  color: #2b0000;
+  font-size: 26px;
+  border-radius: 50%;
+  padding: 15px 20px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.btn-carrito:hover {
+  transform: scale(1.1);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background-color: #1a0000;
+  padding: 30px;
+  border: 2px solid #ffcc00;
+  border-radius: 15px;
+  color: #fff;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* ==========================================================
+   ⚜️ FOOTER
+   ========================================================== */
+footer {
+  background-color: #1a0000;
+  border-top: 2px solid #ffcc00;
+  text-align: center;
+  padding: 20px;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+/* ==========================================================
+   ✨ ANIMACIONES
+   ========================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes resplandor {
+  from { box-shadow: 0 0 5px #ffd700; }
+  to { box-shadow: 0 0 15px #ffea8a; }
+}
+
+/* ==========================================================
+   🌟 LA MESA DEL REY - ESTILOS GENERALES
+   ========================================================== */
+
+/* === FUENTE Y BASE === */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --color-principal: #ffcc00;
+  --color-secundario: #ff9900;
+  --color-fondo: #0f0000;
+  --color-borde: #2b0000;
+  --color-texto: #fff;
+  --color-texto-suave: #f5e8c7;
+  --color-sombra: rgba(255, 204, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================
+   🔝 ENCABEZADO
+   ========================================================== */
+header {
+  background: linear-gradient(90deg, #2b0000, #1a0000);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  border-bottom: 3px solid var(--color-principal);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* === LOGO === */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-principal);
+  box-shadow: 0 0 12px var(--color-sombra);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px var(--color-sombra);
+}
+
+.titulo-logo {
+  color: var(--color-principal);
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+}
+
+/* === MENÚ DE NAVEGACIÓN === */
+nav a {
+  color: var(--color-texto);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  font-size: 17px;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav a:hover,
+nav a.activo {
+  color: var(--color-principal);
+  border-bottom: 2px solid var(--color-principal);
+  padding-bottom: 3px;
+}
+
+/* === RESPONSIVO HEADER === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .logo-container {
+    flex-direction: column;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+/* ==========================================================
+   🏠 SECCIÓN HERO
+   ========================================================== */
+.hero {
+  background: url("img/fondo-hero.jpg") center/cover no-repeat;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: var(--color-texto);
+  animation: aparecer 1.5s ease;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: var(--color-principal);
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin: 20px 0;
+  color: var(--color-texto-suave);
+}
+
+.btn {
+  background-color: var(--color-principal);
+  color: var(--color-borde);
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-secundario);
+  transform: scale(1.05);
+}
+
+/* ==========================================================
+   🛒 BOTÓN Y MODAL DEL CARRITO
+   ========================================================== */
+.btn-carrito {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--color-principal);
+  border: none;
+  color: var(--color-borde);
+  font-size: 26px;
+  border-radius: 50%;
+  padding: 15px 20px;
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--color-sombra);
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+
+.btn-carrito:hover {
+  transform: scale(1.1);
+}
+
+/* === MODAL === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-contenido {
+  background-color: #1a0000;
+  padding: 30px;
+  border: 2px solid var(--color-principal);
+  border-radius: 15px;
+  color: var(--color-texto);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 25px var(--color-sombra);
+  position: relative;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: var(--color-principal);
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cerrar:hover {
+  color: var(--color-secundario);
+}
+
+.modal .acciones button {
+  background-color: var(--color-principal);
+  color: var(--color-borde);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal .acciones button:hover {
+  background-color: var(--color-secundario);
+}
+
+/* ==========================================================
+   ⚜️ FOOTER
+   ========================================================== */
+footer {
+  background-color: #1a0000;
+  border-top: 2px solid var(--color-principal);
+  text-align: center;
+  padding: 20px;
+  color: var(--color-principal);
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================
+   ✨ ANIMACIONES
+   ========================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.bloque-mision {
+  background-color: #2b0000;
+  color: #f9f9f9;
+  padding: 40px;
+  margin: 40px auto;
+  border-radius: 20px;
+  width: 80%;
+  text-align: justify;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.bloque-mision h2 {
+  text-align: center;
+  color: #ffd700;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | La Mesa del Rey</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 🔝 Encabezado -->
+  <header>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo La Mesa del Rey" class="logo-img" />
+      <h1 class="titulo-logo">La Mesa del Rey</h1>
+    </div>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Historia</a>
+      <a href="menu.html">Menú</a>
+      <a href="contacto.html" class="activo">Contacto</a>
+      <a href="ubicacion.html">Ubicación</a>
+    </nav>
+  </header>
+  
+
+  <!-- 📩 Sección de contacto -->
+  <section class="seccion-contacto">
+    <div class="contacto-info">
+      <h2>Contáctanos</h2>
+      <p>¿Tienes dudas, pedidos especiales o deseas hacer una reserva?  
+      Escríbenos, estaremos encantados de atenderte. 💛</p>
+
+      <div class="info-extra">
+        <p><strong>📞 Teléfono:</strong> +57 310 456 7890</p>
+        <p><strong>✉️ Correo:</strong> contacto@lamesadelrey.com</p>
+        <p><strong>📍 Dirección:</strong> Calle 45 #12-34, Pereira - Risaralda</p>
+      </div>
+    </div>
+
+    <div class="formulario-container">
+      <form class="formulario" onsubmit="return enviarFormulario(event)">
+        <input type="text" id="nombre" placeholder="Tu nombre" required>
+        <input type="email" id="correo" placeholder="Tu correo" required>
+        <textarea id="mensaje" placeholder="Escribe tu mensaje..." rows="5" required></textarea>
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+      <p id="mensaje-enviado" class="mensaje-enviado"></p>
+    </div>
+  </section>
+
+  <!-- 🔻 Pie de página -->
+  <footer>
+    <div class="footer-logo">
+      <img src="img/logo.png" alt="Logo La Mesa del Rey" />
+      <p>© 2025 La Mesa del Rey — Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- 🧠 Script simple para simular envío -->
+  <script>
+    function enviarFormulario(e) {
+      e.preventDefault();
+      document.getElementById("mensaje-enviado").textContent = "✅ ¡Tu mensaje fue enviado con éxito!";
+      document.querySelector(".formulario").reset();
+      setTimeout(() => {
+        document.getElementById("mensaje-enviado").textContent = "";
+      }, 4000);
+      return false;
+    }
+  </script>
+
+</body>
+</html>

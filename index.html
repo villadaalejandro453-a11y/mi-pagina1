@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ================= METADATOS ================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La Mesa del Rey — Empanadas gourmet con el auténtico sabor colombiano. Descubre nuestro menú, historia y ubicaciones.">
+  <title>La Mesa del Rey | Empanadas Gourmet</title>
+
+  <!-- ================= ESTILOS Y SCRIPTS ================= -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="icon" type="image/png" href="img/logo.png">
+</head>
+
+<body>
+  <!-- ==========================================================
+       🔝 ENCABEZADO PRINCIPAL
+  ========================================================== -->
+  <header>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo La Mesa del Rey" class="logo-img" />
+      <h1 class="titulo-logo">La Mesa del Rey</h1>
+    </div>
+
+    <nav>
+      <a href="index.html" class="activo">Inicio</a>
+      <a href="nosotros.html">Historia</a>
+      <a href="menu.html">Menú</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="ubicacion.html">Ubicación</a>
+    </nav>
+  </header>
+
+  <!-- ==========================================================
+       🏠 SECCIÓN PRINCIPAL / HERO
+  ========================================================== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>¡Bienvenido a <span class="resaltado">La Mesa del Rey</span>!</h1>
+      <p>Las mejores empanadas gourmet con el auténtico sabor colombiano.</p>
+      <a href="menu.html" class="btn">Ver Menú</a>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       🛒 CARRITO DE COMPRAS (BOTÓN + MODAL)
+  ========================================================== -->
+  <!-- Botón flotante del carrito -->
+  <button class="btn-carrito" aria-label="Ver carrito" onclick="mostrarCarrito()">🛒</button>
+
+  <!-- Modal del carrito -->
+  <div id="modal-carrito" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarCarrito()" aria-label="Cerrar">&times;</span>
+      <h3>Tu carrito</h3>
+
+      <ul id="lista-carrito"></ul>
+      <p id="total-carrito">Total: $0</p>
+
+      <div class="acciones">
+        <button onclick="vaciarCarrito()">Vaciar</button>
+        <button onclick="cerrarCarrito()">Seguir comprando</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       ⚜️ PIE DE PÁGINA
+  ========================================================== -->
+  <footer>
+    <p>© 2025 <strong>La Mesa del Rey</strong> — Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
